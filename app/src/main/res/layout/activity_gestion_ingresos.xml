@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GestionIngresos"
+    android:background="#FFFFFF">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTituloGestionIngresos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GESTIÓN DE INGRESOS"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Campo Monto -->
+    <TextView
+        android:id="@+id/textViewMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monto"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloGestionIngresos"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/txtIngresoMonto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewMonto"
+        app:layout_constraintTop_toTopOf="@+id/textViewMonto"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Campo Categoría -->
+    <TextView
+        android:id="@+id/textViewCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoMonto"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <Spinner
+        android:id="@+id/spnIngresoCategoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:entries="@array/tipoIngreso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewCategoria"
+        app:layout_constraintTop_toTopOf="@+id/textViewCategoria"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Campo Fecha -->
+    <TextView
+        android:id="@+id/textViewFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnIngresoCategoria"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/txtIngresoFecha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Presiona para seleccionar fecha"
+        android:inputType="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewFecha"
+        app:layout_constraintTop_toTopOf="@+id/textViewFecha"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Campo Descripción -->
+    <TextView
+        android:id="@+id/textViewDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoFecha"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/txtIngresoDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewDescripcion"
+        app:layout_constraintTop_toTopOf="@+id/textViewDescripcion"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- CardView para botones -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Botón Registrar -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnIngresoRegistrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="REGISTRAR"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Botón Mostrar Ingreso -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnIngresoMostrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="MOSTRAR INGRESO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp" />
+
+            <!-- Botón Regresar -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGestionRegresar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="REGRESAR"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/btnIngresoMostrar"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
